@@ -1,15 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Signup Page</h1>
-    <form method="POST">
+  <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign Up Page</title>
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'Signup/signup.css' %}">
+    </head>
+
+    <body>
+      <div class = "signup-container">
+        <div>
+            <h1 class = "signup-title">Sign Up Page</h1>
+        </div>
+
+        <form method="POST" class = "signup-form">
         {% csrf_token %}
-        {{ template_data.form.as_p }}
-        <button type="submit">Sign Up</button>
-    </form>
-</body>
+
+          <div>
+            <p>
+                {{ template_data.form.username.label }}
+            </p>
+          </div>
+
+          <div>
+            <p>
+              {{ template_data.form.username }}
+            </p>
+          </div>
+
+          <div>
+            <p>
+              {{ template_data.form.password1.label }}
+            </p>
+          </div>
+
+          <div>
+            <p>
+              {{ template_data.form.password1 }}
+            </p>
+          </div>
+
+          <div>
+            <p>
+              {{ template_data.form.password2.label }}
+            </p>
+          </div>
+
+          <div>
+            <p>
+              {{ template_data.form.password2 }}
+            </p>
+          </div>
+
+          <div>
+            <button class="signup-button" type="submit">
+              Sign Up
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </body>
+
 </html>
