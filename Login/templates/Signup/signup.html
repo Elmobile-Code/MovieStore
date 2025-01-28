@@ -16,51 +16,19 @@
         </div>
 
         <form method="POST" class = "signup-form">
-        {% csrf_token %}
+          {% csrf_token %}
+
+          {% for field in template_data.form %}
+            <div><p>{{ field.label }}</p></div>
+            <div><p>{{ field }}</p></div>
+            <div><p>{{ field.errors }}</p></div>
+          {% endfor %}
 
           <div>
-            <p>
-                {{ template_data.form.username.label }}
-            </p>
+            <button class="signup-button" type="submit">Sign Up</button>
           </div>
-
-          <div>
-            <p>
-              {{ template_data.form.username }}
-            </p>
-          </div>
-
-          <div>
-            <p>
-              {{ template_data.form.password1.label }}
-            </p>
-          </div>
-
-          <div>
-            <p>
-              {{ template_data.form.password1 }}
-            </p>
-          </div>
-
-          <div>
-            <p>
-              {{ template_data.form.password2.label }}
-            </p>
-          </div>
-
-          <div>
-            <p>
-              {{ template_data.form.password2 }}
-            </p>
-          </div>
-
-          <div>
-            <button class="signup-button" type="submit">
-              Sign Up
-            </button>
-          </div>
-
         </form>
+
       </div>
     </body>
 
