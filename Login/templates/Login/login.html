@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+
+    {% if template_data.error %}
+    <div> {{ template_data.error }} </div>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required autocomplete="username" class="form-control">
+        </p>
+
+        <p>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required autocomplete="current-password" class="form_control">
+        </p>
+
+        <div>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</body>
+</html>
