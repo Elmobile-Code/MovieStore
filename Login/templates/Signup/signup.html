@@ -19,7 +19,7 @@
           {% csrf_token %}
 
           {% for field in template_data.form %}
-            <div><p>{{ field.label }}</p></div>
+            {{ field.label }}
             <div><p>{{ field }}</p></div>
             <div><p>{{ field.errors }}</p></div>
           {% endfor %}
