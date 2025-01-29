@@ -32,7 +32,7 @@ def signup(request):
 
     return render(request, 'Signup/signup.html', {'template_data': template_data})
 
-@login_required(login_url='/login/')
+@login_required
 def logout(request):
     auth_logout(request)
-    return redirect('Login.login')
+    return redirect('Home.home')
