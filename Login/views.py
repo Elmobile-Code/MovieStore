@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
 from django.contrib.auth import login as auth_login, authenticate
+from django.contrib.auth import logout as auth_logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def login(request):
@@ -29,3 +31,8 @@ def signup(request):
             template_data['form'] = form
 
     return render(request, 'Signup/signup.html', {'template_data': template_data})
+
+@login_required(login_url='/login/')
+def logout(request):
+    auth_logout(request)
+    return redirect('Login.login')
