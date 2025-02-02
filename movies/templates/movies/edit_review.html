@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ template_data.movie.name }}</title>
+</head>
+<body>
+
+    <!-- STYLING NEEDED -->
+    <h2>Edit Review</h2>
+    <hr/>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label for="comment">Comment:</label>
+            <textarea name="comment" id="comment" required>{{ template_data.review.comment }}</textarea>
+        </p>
+
+        <button type="submit">Edit Review</button>
+    </form>
+</body>
+</html>
