@@ -1,0 +1,25 @@
+.home-container {
+    position: relative;
+    border: black 1px solid;
+    width: 1058px;
+    height: auto;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.img-container {
+    width: 100%;
+    margin-left: 17px;
+    margin-right: 17px;
+    margin-top: 17px;
+}
+
+.movielist-flex {
+    height: 1000px;
+    flex-direction: column;
+    display: flex;
+    border: black 1px solid;
+    width: 1000px;
+    margin: 29px;
+}
