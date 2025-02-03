@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Movie, Review
+from .models import Movie, Review, CartItem
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -54,3 +54,29 @@ def delete_review(request, id, review_id):
     review = get_object_or_404(Review, id=review_id, user=request.user)
     review.delete()
     return redirect('movies.show', id=id)
+
+# cart stuff
+@login_required
+def add_to_cart(request, movie_id):
+    movie = Movie.objects.get(id=movie_id)
+    cart_item, created = CartItem.objects.get_or_create(user=request.user, movie=movie)
+    if not created:
+        cart_item.quantity += 1
+        cart_item.save()
+    return redirect('movies.cart-detail')
+
+@login_required
+def remove_from_cart(request, cart_item_id):
+    cart_item = CartItem.objects.get(id=cart_item_id)
+    if cart_item.quantity > 1:
+        cart_item.quantity -= 1
+        cart_item.save()
+    else:
+        cart_item.delete()
+    return redirect('movies.cart-detail')
+
+@login_required
+def cart_detail(request):
+    items = CartItem.objects.filter(user=request.user)
+    return render(request, 'movies/cart.html', {'cart_items': items})
+

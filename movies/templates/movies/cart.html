@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Cart</h1>
+        <ul>
+            {% for item in cart_items %}
+                <li>
+                    {{ item.movie.name }} - ${{ item.movie.price }} ({{ item.quantity }})
+
+                </li>
+            {% empty %}
+                <li>Your cart is empty.</li>
+            {% endfor %}
+        </ul>
+
+    </header>
+
+
+</body>
+</html>

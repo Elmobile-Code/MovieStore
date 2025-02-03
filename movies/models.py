@@ -20,3 +20,11 @@ class Review(models.Model):
 
     def __str__(self):
         return str(self.id) + ' - ' + self.movie.name
+
+class CartItem(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+
+    def __str__(self):
+        return f'{self.user.username} - {self.movie.name} - {self.quantity}'
