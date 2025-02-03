@@ -22,6 +22,7 @@ class Review(models.Model):
         return str(self.id) + ' - ' + self.movie.name
 
 class CartItem(models.Model):
+    id = models.AutoField(primary_key = True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)

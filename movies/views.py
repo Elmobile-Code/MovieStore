@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Movie, Review, CartItem
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 
@@ -67,12 +68,17 @@ def add_to_cart(request, movie_id):
 
 @login_required
 def remove_from_cart(request, cart_item_id):
-    cart_item = CartItem.objects.get(id=cart_item_id)
-    if cart_item.quantity > 1:
-        cart_item.quantity -= 1
-        cart_item.save()
-    else:
-        cart_item.delete()
+    try:
+        cart_item = CartItem.objects.get(id=cart_item_id, user=request.user)
+
+        if cart_item.quantity > 1:
+            cart_item.quantity -= 1
+            cart_item.save()
+        else:
+            cart_item.delete()
+        messages.success(request, "Item updated in your cart.")
+    except CartItem.DoesNotExist:
+        messages.error(request, "The item you tried to remove does not exist in your cart.")
     return redirect('movies.cart-detail')
 
 @login_required

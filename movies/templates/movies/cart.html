@@ -11,13 +11,21 @@
         <ul>
             {% for item in cart_items %}
                 <li>
-                    {{ item.movie.name }} - ${{ item.movie.price }} ({{ item.quantity }})
+                    {{ item.movie.name }} - ${{ item.movie.price }} ({{ item.quantity }}) id:{{ item.id }}
 
                 </li>
             {% empty %}
                 <li>Your cart is empty.</li>
             {% endfor %}
         </ul>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
 
     </header>
 
