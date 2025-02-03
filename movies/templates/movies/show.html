@@ -21,6 +21,7 @@
                             <h6>{{ review.comment }}</h6>
                             {% if user.is_authenticated and user == review.user %}
                                 <a href={% url 'movies.edit_review' id=template_data.movie.id review_id=review.id %}>Edit</a>
+                                <a href={% url 'movies.delete_review' id=template_data.movie.id review_id=review.id %}>Delete</a>
                             {% endif %}
                         </li>
                     {% endfor %}
