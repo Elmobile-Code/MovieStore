@@ -2,31 +2,112 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ template_data.title }}</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'Home/about.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ template_data.title }}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'Home/about.css' %}">
 </head>
 
 <body>
-    <div class="about-container">
-        <h1 class="about-header">About MovieStore</h1>
+  {% load static %}
+  <img src="{% static 'Home/home-background.png' %}" class="bg-img">
 
-        <p class="about-text">
-            MovieStore is a platform for discovering, reviewing, and purchasing movies online.
-        </p>
+  <div class = "body-div">
 
-        <p class="about-text">
-            Create an account, explore our collection, and share your thoughts with the community.
-        </p>
+    <div class="container">
+      <div class="row">
 
-        <p class="about-text">
-            Start your cinematic journey today!
-        </p>
+        <div class= "section">
+            <p class="about-title"> About Us </p>
+        </div>
 
-        <a class="back-home" href="{% url 'Home.home' %}">Back to Home</a>
+        <div class="section">
+          <h1 class= "about-header"> MovieStore </h1>
+          <p class = "header-sub"> Where You Find The Best Of The Best </p>
+        </div>
+
+        <div class="section">
+          <p class = "about-title">
+            How Do We Do It
+          </p>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="section">
+          <p class="about-text">
+            At Movies Store, we offer a vast digital library that spans across genres, ensuring
+            there's something for every movie lover. Browse our extensive collection of films,
+            including the latest releases, timeless classics, and hidden gems. With just a few
+            clicks, you can rent or purchase your favorite titles and instantly stream them in
+            high-definition quality. Discover the convenience of our digital platform, where you
+            have the flexibility to watch movies on your preferred device, whether it's a smart
+            TV, tablet, or smartphone. With our intuitive search and recommendation features,
+            finding your next movie night pick has never been easier.
+          </p>
+        </div>
+
+        <div class="section">
+          {% load static %}
+          <img class = "movie-logo" src="{% static 'Home/movie-logo.png' %}">
+        </div>
+
+        <div class="section">
+          <p class = "about-text">
+            At MovieStore, we combine cutting edge technology while keeping our user in mind to
+            provide a user-friendly service to allow you to get the best movie rating application.
+            Our platform is built to allow you to rate movies and view the general public consensus.
+            We provide smart search capabilities for you to find you movie's with ease and an Extensive
+            Digital Library from top studios of all the movies you ever want to find.
+          </p>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="section"></div>
+
+        <div class="section">
+          <a class="back-home" href="{% url 'Home.home' %}"> Back To Home </a>
+        </div>
+
+        <div class="section"> </div>
+
+      </div>
     </div>
+    </div>
+
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-left">
+          <h3>Movie Store</h3>
+          <p>© 2025 Movie Store. All rights reserved.</p>
+        </div>
+
+        <div class="footer-middle">
+          <h4>Quick Links</h4>
+          <ul>
+            <li> <a href="{% url 'Home.about' %}" class="use-button1"> About </a> </li>
+            <li> </li><a href="{% url 'movies.index' %}" class="use-button2"> Movies </a> </li>
+          </ul>
+        </div>
+
+        <div class="footer-right">
+          <h4>Contacts</h4>
+          <ul class="social-icons">
+            <li><a href="#" class="social-icon">Koan</a></li>
+            <li><a href="#" class="social-icon">Elvis</a></li>
+            <li><a href="#" class="social-icon">Alina</a></li>
+            <li><a href="#" class="social-icon">Steve</a></li>
+            <li><a href="#" class="social-icon">Daksh</a></li>
+          </ul>
+        </div>
+    </div>
+  </footer>
+
 </body>
 
 </html>
