@@ -2,6 +2,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+p {
+  color: #ffca66;
+}
+
 .bg-img {
   position: fixed;
   top: 0;
@@ -15,15 +19,15 @@ body {
 button {
   background: none;
   border-radius: 20px;
-  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-shadow: #ffca66 0 10px 20px -10px;
   box-sizing: border-box;
-  color: black;
   cursor: pointer;
   font-size: 16px;
   line-height: 24px;
   outline: 0 solid transparent;
   padding: 8px 18px;
-  border: solid #343467;
+  border: solid #ffca66;
+  color: #ffca66;
 }
 
 
@@ -31,11 +35,9 @@ button {
   display: flex;
   flex-direction: column;
   position: relative;
-  border: #0b0b88 1px solid;
+  border: #ffca66 1px solid;
   width: 1200px;
-  margin-bottom: 0;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 40px auto 0;
   border-radius: 10px;
   padding-left: 30px;
   padding-right: 30px;
@@ -65,7 +67,6 @@ button {
 .title {
   font-weight: bold;
   font-size: 30px;
-  color: black;
   margin: 15px 0 0;
 }
 
@@ -74,11 +75,13 @@ button {
   font-size: 48px;
   text-align: center;
   margin-bottom: 0;
+  margin-top: 20px;
 }
 
 .sub-wel-msg {
   text-align: center;
   font-style: italic;
+  color: #ffca66;
 }
 
 .button-container {
@@ -92,17 +95,28 @@ button {
   cursor: pointer;
 }
 
+.use-button2 {
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  transform: scale(1.04);
+}
+
 .use-button1:hover {
-  opacity: 0.9;
+  transform: scale(1.04);
 }
 
 .use-button2:hover {
-  opacity: 0.9;
-  cursor: pointer;
+  transform: scale(1.04);
 }
 
 .message-container {
   margin-bottom: 50px;
+  box-shadow: #ffca66 0 10px 20px -10px;
+  border: solid 1px #ffca66;
+  border-radius: 20px;
+  margin-top: 50px
 }
 
 
@@ -161,4 +175,12 @@ footer {
 
 .social-icon:hover {
   color: #ddd;
+}
+
+.button-msg1 {
+  margin-right: 10px;
+}
+
+.button-msg2 {
+  margin-left: 10px;
 }
