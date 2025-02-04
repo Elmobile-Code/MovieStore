@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ template_data.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Home/about.css' %}">
+</head>
+
+<body>
+    <div class="about-container">
+        <h1 class="about-header">About MovieStore</h1>
+
+        <p class="about-text">
+            MovieStore is a platform for discovering, reviewing, and purchasing movies online.
+        </p>
+
+        <p class="about-text">
+            Create an account, explore our collection, and share your thoughts with the community.
+        </p>
+
+        <p class="about-text">
+            Start your cinematic journey today!
+        </p>
+
+        <a class="back-home" href="{% url 'Home.home' %}">Back to Home</a>
+    </div>
+</body>
+
+</html>
