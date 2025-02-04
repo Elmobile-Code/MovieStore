@@ -27,8 +27,11 @@ crossorigin="anonymous">
     </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto navbar-ml">
-                <a class="nav-link" href "{%  url 'movies.index' %}>
+                <a class="nav-link" href="{% url 'movies.index' %}">
                     Movies
+                </a>
+                <a class="nav-link" href="{% url 'movies.cart-detail' %}">
+                    Cart
                 </a>
             </div>
         </div>
