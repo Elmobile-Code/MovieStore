@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-6 mx-auto mb-3">
+                <h2>{{ template_data.movie.name }}</h2>
+                <hr />
+                <p><b> Description</b> {{ template_data.movie.description }}</p>
+                <p><b>Price:</b> {{ template_data.movie.price }}</p>
+
+
+                <!-- User Reviews List (STYLING NEEDED) -->
+                <h2>Reviews</h2>
+                <hr/>
+                <ul>
+                    {% for review in template_data.reviews %}
+                        <li>
+                            <h5>Review by {{ review.user.username }}</h5>
+                            <h6>{{ review.date }}</h6>
+                            <h6>{{ review.comment }}</h6>
+                            {% if user.is_authenticated and user == review.user %}
+                                <a href={% url 'movies.edit_review' id=template_data.movie.id review_id=review.id %}>Edit</a>
+                                <a href={% url 'movies.delete_review' id=template_data.movie.id review_id=review.id %}>Delete</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <!-- Reviews Form (STYLING NEEDED) -->
+                {% if user.is_authenticated %}
+                    <b>Create a review</b>
+                    <br>
+                    <form method="POST" action="{% url 'movies.create_review' id=template_data.movie.id %}">
+                        {% csrf_token %}
+                        <p>
+                          <label for="comment">Comment:</label>
+                          <textarea name="comment" id="comment" required></textarea>
+                        </p>
+                        <button type="submit">Add Review</button>
+                    </form>
+                {% endif %}
+
+            </div>
+            <div class="col-md-6 mx-auto mb-3 text-center">
+                <img src="{{ template_data.movie.image_url }}" class="rounded img-card-400"
+                     style="height: 400px; width: auto"/>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

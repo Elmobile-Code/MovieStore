@@ -3,8 +3,7 @@
 
     <head>
       <meta charset="UTF-8">
-      <title>Sign Up Page</title>
-
+      <title>{{ template_data.title }}</title>
       {% load static %}
       <link rel="stylesheet" href="{% static 'Signup/signup.css' %}">
     </head>
@@ -19,12 +18,6 @@
           {% csrf_token %}
 
           {% for field in template_data.form %}
-          <!--
-            <div>
-              <p>{{ field.label }}</p>
-            </div>
-            -->
-
             <div>
               <p class = "input-box">{{ field }}</p>
             </div>
