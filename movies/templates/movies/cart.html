@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'cart/cart.css' %}">
 </head>
 <body>
-    <a href="{% url 'movies.index' %}">Back</a>
+  {% load static %}
+  <img src="{% static 'cart/home-background.png' %}" class="bg-img">
     <header>
         <h1>Cart</h1>
         <ul>

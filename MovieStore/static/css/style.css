@@ -1,8 +1,37 @@
 .navbar a.nav-link {
-color: #FFFEF6 !important;
+    color: #FFFEF6 !important;
 }
+
+.nav-link {
+    border: solid 1px;
+    border-radius: 15px;
+    margin-left: 20px;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    opacity: 0.9;
+    transform-scale(1.2)
+}
+
+.nav-link:active {
+    opacity: 0.7;
+}
+
+.bg-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
 .bg-dark {
-background-color: #2E2E2E !important;
+  background: linear-gradient(135deg, #2b3787, #142771);
 }
 .ms-footer {
     background-color: #202020;
@@ -29,4 +58,8 @@ background-color: #2E2E2E !important;
 .img-card-400 {
     width: auto;
     max-height: 400px;
+}
+
+.p-2 card align-items-center pt-4{
+    background-color: black;
 }
