@@ -27,10 +27,12 @@
             </p>
           </div>
 
-          <div>
             <p>
               <input class="username-input" type="password" id="password" name="password" required autocomplete="current-password" class="form_control" placeholder = "Password">
             </p>
+
+            <div>
+              <a href="{% url 'accounts.password_reset' %}">Forgot Password?</a>
           </div>
 
           <div>
