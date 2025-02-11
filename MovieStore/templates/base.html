@@ -54,53 +54,33 @@ crossorigin="anonymous">
     {% endblock content %}
   </div>
 <!-- Footer -->
-<section class="p-3 ms-footer d-none d-md-block">
-    <div class="container">
-        <div class="row mt-3 text-white">
-            <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4">
-                <b>MOVIES STORE</b>
-                <hr />
-                    <p>
-                    Welcome to Movies Store, your premier online
-                    destination for a cinematic adventure like no
-                    other! Dive into the world of movies from the
-                    comfort of your own home with our user-
-                    friendly and immersive online movie store.
-                    </p>
-            </div>
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                <b>LINKS</b>
-                <hr />
-                <p></p><a class="nav-link">
-                About
-                </a>
-            </div>
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                <b>CONTACT</b>
-                <hr />
-                <p><i class="fas fa-home me-2"></i>
-                150-2345 Tokyo-to, Japan
-                </p>
-                <p><i class="fas fa-envelope me-2"></i>
-                info@moviesstore.com
-                </p>
-                <p><i class="fas fa-phone me-2"></i>
-                +81 03-3333-3333
-                </p>
-            </div>
+<footer class="mt-auto">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h3>Movie Store</h3>
+          <p>© 2025 Movie Store. All rights reserved.</p>
         </div>
-    </div>
-</section>
-<footer class="p-3 ms-footer-bottom bg-dark">
-    <div class="container d-flex justify-content-between">
-        <div class="me-5 text-white">
 
+        <div class="footer-middle">
+          <h4>Quick Links</h4>
+          <ul>
+            <li> <a href="{% url 'Home.about' %}" class="use-button1"> About </a> </li>
+            <li> </li><a href="{% url 'movies.index' %}" class="use-button2"> Movies </a> </li>
+          </ul>
         </div>
-        <div class="text-white">
-        <span>© Copyright - 2024</span>
+
+        <div class="footer-right">
+          <h4>Contacts</h4>
+          <ul class="social-icons">
+            <li><a href="#" class="social-icon">Koan</a></li>
+            <li><a href="#" class="social-icon">Elvis</a></li>
+            <li><a href="#" class="social-icon">Alina</a></li>
+            <li><a href="#" class="social-icon">Steve</a></li>
+            <li><a href="#" class="social-icon">Daksh</a></li>
+          </ul>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 <!-- Footer -->
   </body>
 </html>
