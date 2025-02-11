@@ -50,12 +50,14 @@ body {
 
 .section {
   flex: 1;
-  background: linear-gradient(135deg, #ffca66, #ffb535);
+  background: none;
+  border: solid 2px #ffca66;
+  box-shadow: #ffca66 0 10px 20px -10px;
   color: white;
   text-align: center;
   padding: 20px;
   font-size: 1.2rem;
-  border-radius: 5px;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,24 +65,25 @@ body {
 }
 
 .about-header {
-    color: black;
+    color: #ffca66;
     font-size: 32px;
     margin-bottom: 10px;
 }
 
 .header-sub {
-  color: black;
+  color: #ffca66;
   font-size: 18px;
+  font-style: italic;
 }
 
 .about-title {
   font-weight: bold;
   font-size: 24px;
-  color: black;
+  color: #ffca66;
 }
 
 .about-text {
-  color: black;
+  color: #ffca66;
   font-size: 16px;
   margin-bottom: 20px;
   line-height: 1.5;
@@ -97,8 +100,8 @@ body {
   line-height: 24px;
   outline: 0 solid transparent;
   padding: 8px 18px;
-  border: solid black;
-  color: black;
+  border: solid #ffca66 1px;
+  color: #ffca66;
   text-decoration: none;
 }
 

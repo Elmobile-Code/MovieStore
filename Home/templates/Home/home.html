@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ template_data.title }}</title>
     {% load static %}
-    <link rel="stylesheet" href="{%static 'Home/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/index.css' %}">
   </head>
 
   <body>
-    <div class = "home-container">
+    <div class = "container-md">
       {% load static %}
-      <img src="{% static 'Home/home-background.png' %}" class="bg-img">
+      <img src="{% static 'Home/background.png' %}" class="bg-img">
 
       <div class = "home-header">
         <div>
@@ -22,11 +22,11 @@
 
         <div>
           {% if user.is_authenticated %}
-          <button class="btn-login" onclick="location.href='{% url 'Login.logout' %}'">
+          <button class="btn-login" onclick="location.href='{% url 'accounts.logout' %}'">
             Logout ({{ user.username }})
           </button>
           {% else %}
-          <button class="btn-login" onclick="location.href='{% url 'Login.login' %}'">
+          <button class="btn-login" onclick="location.href='{% url 'accounts.login' %}'">
             Login
           </button>
           {% endif %}
@@ -36,7 +36,7 @@
       <div class = "message-container">
         <p class = "welcome-message"> Welcome to Movie Store </p>
         <p class = "sub-wel-msg"> Your Ticket to Unlimited Entertainment</p>
-        <p class = "sub-wel-msg"> The Best Movie Experience</p>
+        <p class = "sub-wel-msg"> The Best Movie Experience!</p>
       </div>
 
       <div class = "button-container">
@@ -47,8 +47,9 @@
       </div>
 
     </div>
+  </body>
 
-    <footer>
+    <footer class="mt-auto">
       <div class="footer-container">
         <div class="footer-left">
           <h3>Movie Store</h3>
@@ -76,5 +77,4 @@
       </div>
     </footer>
 
-  </body>
 </html>

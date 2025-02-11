@@ -5,12 +5,12 @@
       <meta charset="UTF-8">
       <title>{{ template_data.title }}</title>
       {% load static %}
-      <link rel="stylesheet" href="{%static 'Login/login.css' %}">
+      <link rel="stylesheet" href="{%static 'login/login.css' %}">
     </head>
 
     <body>
       {% load static %}
-      <img src="{% static 'Login/home-background.png' %}" class="bg-img">
+      <img src="{% static 'login/home-background.png' %}" class="bg-img">
 
       <div class = "login-container">
         <h1 class = "login-header"> Login Page </h1>
@@ -27,10 +27,12 @@
             </p>
           </div>
 
-          <div>
             <p>
               <input class="username-input" type="password" id="password" name="password" required autocomplete="current-password" class="form_control" placeholder = "Password">
             </p>
+
+            <div>
+              <a href="{% url 'accounts.password_reset' %}">Forgot Password?</a>
           </div>
 
           <div>
@@ -39,7 +41,7 @@
 
           <div>
             <p class = "signup-link">
-              Don't have an account? <a href="{% url 'Login.signup' %}"> Sign Up</a>
+              Don't have an account? <a href="{% url 'accounts.signup' %}"> Sign Up</a>
             </p>
           </div>
         </form>
