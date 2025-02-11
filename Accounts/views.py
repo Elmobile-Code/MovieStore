@@ -30,7 +30,7 @@ def signup(request):
         else:
             template_data['form'] = form
 
-    return render(request, 'Signup/signup.html', {'template_data': template_data})
+    return render(request, 'signup/signup.html', {'template_data': template_data})
 
 @login_required
 def logout(request):
