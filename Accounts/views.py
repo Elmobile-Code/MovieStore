@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def login(request):
-    template_data = {'title': 'Login'}
+    template_data = {'title': 'Account'}
     if request.method == 'POST':
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is not None:
@@ -15,7 +15,7 @@ def login(request):
         else:
             template_data['error'] = 'Invalid username or password.'
 
-    return render(request, 'Login/login.html', { 'template_data' : template_data })
+    return render(request, 'accounts/login.html', { 'template_data' : template_data })
 
 def signup(request):
     template_data = {'title': 'Sign Up'}
@@ -26,11 +26,11 @@ def signup(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Login.login')
+            return redirect('accounts.login')
         else:
             template_data['form'] = form
 
-    return render(request, 'Signup/signup.html', {'template_data': template_data})
+    return render(request, 'signup/signup.html', {'template_data': template_data})
 
 @login_required
 def logout(request):
