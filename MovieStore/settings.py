@@ -138,4 +138,4 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "cs2340group3@gmail.com"
-EMAIL_HOST_PASSWORD = os.environ["CS2340 Gmail App Password"]
+EMAIL_HOST_PASSWORD = os.getenv("CS2340_Gmail_App_Password")
