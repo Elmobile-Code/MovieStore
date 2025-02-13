@@ -1,29 +1,13 @@
-.nav-link {
-  border: #ffca66 solid 1px;
-  margin-left: 20px;
-  width: 80px;
-  text-align: center;
-  cursor: pointer;
-  color: #ffca66;
-  background: none;
-  border-radius: 20px;
-  box-shadow: #ffca66 0 10px 20px -10px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 24px;
-  outline: 0 solid transparent;
-  padding: 8px 18px;
-  transition: 0.1s;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.nav-link:hover {
-  opacity: 0.9;
-  transform: scale(1.05);
+.header-container {
+  margin-top: 30px;
 }
 
-.nav-link:active {
-  opacity: 0.7;
-}
 
 .bg-img {
   position: fixed;
@@ -35,40 +19,65 @@
   z-index: -1;
 }
 
-.bg-dark {
-  background: linear-gradient(135deg, #2b3787, #142771);
-}
-.ms-footer {
-    background-color: #202020;
-}
-.ms-footer p {
-    color: #7F7F7F;
-    text-decoration: none;
-}
-.ms-footer-bottom span{
-    font-size: 13px;
-    line-height: 38px;
-}
-.ms-footer-bottom a {
-    color: #6ab43e;
-    text-decoration: none;
-}
-.ms-footer-bottom a:hover {
-    color: #fff;
-}
-.img-card-200 {
-    width: fit-content;
-    max-height: 200px;
-}
-.img-card-400 {
-    width: auto;
-    max-height: 400px;
+.header {
+  color: #ffca66;
+  font-size: 36px;
 }
 
-.p-2 card align-items-center pt-4{
-    background-color: black;
+button {
+  border: solid 1px;
+  margin-left: 20px;
+  margin-top: 30px;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border-radius: 20px;
+  box-shadow: #ffca66 0 10px 20px -10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 24px;
+  outline: 0 solid transparent;
+  color: #ffca66;
+  transition: 0.1s;
+  text-decoration: none;
 }
 
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+button:active {
+  opacity: 0.7;
+}
+
+.text {
+  color: #ffca66;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-box {
+  margin-left: 20px;
+  background: none;
+  color: #ffca66;
+  box-shadow: #ffca66 0 10px 20px -10px;
+  border: solid 1px #ffca66;
+  border-radius: 5px;
+  width: 300px;
+  height: 100px;
+}
+
+.submission-flex {
+  display: flex;
+  flex-direction: column;
+}
 
 /* Footer */
 .footer-container {
@@ -150,10 +159,6 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
-.button-msg1 {
-  margin-right: 10px;
-}
-
-.button-msg2 {
-  margin-left: 10px;
+.space {
+  height: 150px;
 }

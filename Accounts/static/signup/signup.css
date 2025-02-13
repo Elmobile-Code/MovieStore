@@ -1,3 +1,8 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .bg-img {
   position: fixed;
   top: 0;
@@ -12,27 +17,65 @@ div {
     margin: 0;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 780px;
+  height: auto;
+  padding: 30px;
+  border: solid white 3px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  box-shadow: white 0 10px 20px -10px;
+  border-radius: 20px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+  height: auto;
+  border: none;
+  background: none;
+}
+
+.movie-title {
+  font-weight: bold;
+  font-size: 48px;
+  margin: 0;
+  padding: 8px 18px;
+  color: white;
+}
+
+.movie-logo {
+  width: 275px;
+}
+
 .signup-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 350px;
-    height: 440px;
-    background: white;
-    border: 1px solid lightgray;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    margin: 140px auto auto;
-    padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: auto;
+  background: none;
+  border: 3px solid white;
+  border-radius: 20px;
+  box-shadow: white 0 10px 20px -10px;
+  margin: auto auto;
+  padding-top: 30px;
 }
 
 .signup-title {
-    color: black;
+    color: white;
 }
 
 .input-box {
     margin-top: 5px;
     margin-bottom: 5px;
+    border-color: white;
 }
 
 /* user input */
@@ -40,15 +83,23 @@ div {
     width: 234px;
     height: 35px;
     border-radius: 5px;
-    border-width: 1px;
+    border-width: 2px;
     padding-left: 10px;
     font-size: 15px;
+    background: none;
+    border-color: white;
+    color: white;
+    box-shadow: white 0 3px 4px -3px;
 }
 
 .signup-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.errorlist {
+  color: red;
 }
 
 .signup-button {
@@ -58,7 +109,7 @@ div {
     height: 40px;
     border: none;
     border-radius: 5px;
-    background-color: #00a6ff;
+    background-color: #0a2885;
 }
 
 .signup-button:hover {
@@ -70,8 +121,13 @@ div {
     opacity: 0.7;
 }
 
+.login-link-container {
+    margin-bottom: 20px;
+}
+
 .have-account-link {
     margin-top: 20px;
+    color: white;
 }
 
 .error-list {

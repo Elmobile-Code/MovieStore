@@ -18,7 +18,7 @@ crossorigin="anonymous">
 </head>
 <body>
   {% load static %}
-  <img src="{% static 'css/home-background.png' %}" class="bg-img">
+  <img src="{% static 'css/background.png' %}" class="bg-img">
 <!-- Header -->
 <nav class="p-3 navbar navbar-dark bg-dark navbar-expand-lg">
     <div class="container">
@@ -53,33 +53,40 @@ crossorigin="anonymous">
     {% endblock content %}
   </div>
 <!-- Footer -->
-<footer class="mt-auto">
-      <div class="footer-container">
-        <div class="footer-left">
-          <h3>Movie Store</h3>
-          <p>© 2025 Movie Store. All rights reserved.</p>
-        </div>
+<footer class = "footer-container">
+    <div>
+      <div>
+        <div>
+          <div class = "footer-site-logo">
+            <a href = "#"> Movie Store </a>
+          </div>
 
-        <div class="footer-middle">
-          <h4>Quick Links</h4>
-          <ul>
-            <li> <a href="{% url 'Home.about' %}" class="use-button1"> About </a> </li>
-            <li> </li><a href="{% url 'movies.index' %}" class="use-button2"> Movies </a> </li>
+          <h4 class = "footer-section-title"> Quick Links </h4>
+          <ul class = "link-container">
+            <li><a href = "#"> About </a></li>
+            <li><a href = "#"> Home </a></li>
+            <li><a href = "#"> Sign Up </a></li>
+            <li><a href = "#"> Login </a></li>
+            <li><a href = "#"> Movies </a></li>
+            <li><a href = "#"> Cart </a></li>
           </ul>
-        </div>
 
-        <div class="footer-right">
-          <h4>Contacts</h4>
-          <ul class="social-icons">
-            <li><a href="#" class="social-icon">Koan</a></li>
-            <li><a href="#" class="social-icon">Elvis</a></li>
-            <li><a href="#" class="social-icon">Alina</a></li>
-            <li><a href="#" class="social-icon">Steve</a></li>
-            <li><a href="#" class="social-icon">Daksh</a></li>
+          <h4 class = "footer-section-title">Contributors</h4>
+          <ul class = "link-container">
+            <li><a href = "#"> Koan </a></li>
+            <li><a href = "#"> Elvis </a></li>
+            <li><a href = "#"> Alina </a></li>
+            <li><a href = "#"> Steve </a></li>
+            <li><a href = "#" >Daksh </a></li>
           </ul>
+
+          <div class = "copyright-text">
+            <p><small> &copy; Movie Store. All Rights Reserved. </small></p>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 <!-- Footer -->
   </body>
 </html>

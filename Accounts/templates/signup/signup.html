@@ -10,37 +10,47 @@
 
     <body>
       {% load static %}
-      <img src="{% static 'login/home-background.png' %}" class="bg-img">
-      <div class = "signup-container">
-        <div>
-          <h1 class = "signup-title">Sign Up</h1>
+      <img src="{% static 'login/background.png' %}" class="bg-img">
+      <div class = "container">
+        <div class = "logo-container">
+          <p class = "movie-title">
+            Movie Store
+          </p>
+
+          {% load static %}
+          <img src="{% static 'login/movie-logo.png' %}" class="movie-logo">
         </div>
-
-        <form method="POST" class = "signup-form">
-          {% csrf_token %}
-
-          {% for field in template_data.form %}
-            <div>
-              <p class = "input-box">{{ field }}</p>
-            </div>
-
-            <div>
-              <p>{{ field.errors }}</p>
-            </div>
-          {% endfor %}
-
+        <div class = "signup-container">
           <div>
-            <button class="signup-button" type="submit">Sign Up</button>
+            <h1 class = "signup-title"> Create Your Account </h1>
           </div>
 
-          <div>
-            <p class = "have-account-link">
-              Already have an account? <a href="{% url 'accounts.login' %}">Login</a>
-            </p>
-          </div>
-        </form>
+          <form method="POST" class = "signup-form">
+            {% csrf_token %}
 
+            {% for field in template_data.form %}
+              <div>
+                <p class = "input-box">{{ field }}</p>
+              </div>
+
+              <div>
+                <p>{{ field.errors }}</p>
+              </div>
+            {% endfor %}
+
+            <div>
+              <button class="signup-button" type="submit">Sign Up</button>
+            </div>
+
+            <div class = "login-link-container">
+              <p class = "have-account-link"> Already have an account? <a href="{% url 'accounts.login' %}">Login</a>
+              </p>
+            </div>
+          </form>
+
+        </div>
       </div>
+
     </body>
 
 </html>

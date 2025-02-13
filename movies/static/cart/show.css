@@ -1,0 +1,23 @@
+p, h2, li, b {
+  color: #ffca66;
+}
+
+button {
+  border: solid 1px;
+  margin-left: 20px;
+  margin-top: 5px;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border-radius: 20px;
+  box-shadow: #ffca66 0 10px 20px -10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 24px;
+  outline: 0 solid transparent;
+  color: #ffca66;
+  transition: 0.1s;
+  text-decoration: none;
+}

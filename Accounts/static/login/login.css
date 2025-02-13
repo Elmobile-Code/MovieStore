@@ -1,3 +1,8 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .bg-img {
   position: fixed;
   top: 0;
@@ -8,22 +13,64 @@
   z-index: -1;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 780px;
+  height: auto;
+  padding: 30px;
+  border: solid white 3px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  box-shadow: white 0 10px 20px -10px;
+  border-radius: 20px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+  height: auto;
+  border: none;
+  background: none;
+}
+
+.movie-title {
+  font-weight: bold;
+  font-size: 48px;
+  margin: 0;
+  padding: 8px 18px;
+  color: white;
+}
+
+.movie-logo {
+  width: 275px;
+}
+
 .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 350px;
-    height: 320px;
-    background: white;
-    border: 1px solid lightgray;
+    height: auto;
+    background: none;
+    border: 3px solid lightgray;
     border-radius: 20px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    margin: 180px auto auto;
+    margin: auto auto;
     padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.login-container div {
+    color: red;
 }
 
 .login-header {
-    color: black;
+    color: white;
 }
 
 .username-input {
@@ -42,7 +89,7 @@
     height: 40px;
     border: none;
     border-radius: 5px;
-    background-color: #00a6ff;
+    background-color: #0a2885;
 }
 
 .login:hover {
@@ -56,5 +103,18 @@
 
 .signup-link {
     margin-top: 20px;
-    margin-left: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.forgot-password-container {
+    margin-bottom: 20px;
+}
+
+.forgot-password {
+    color: #587ed5;
+}
+
+.link-css {
+    color: #587ed5;
 }

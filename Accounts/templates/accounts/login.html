@@ -10,42 +10,52 @@
 
     <body>
       {% load static %}
-      <img src="{% static 'login/home-background.png' %}" class="bg-img">
+      <img src="{% static 'login/background.png' %}" class="bg-img">
+      <div class = "container">
+        <div class = "logo-container">
+          <p class = "movie-title">
+            Movie Store
+          </p>
 
-      <div class = "login-container">
-        <h1 class = "login-header"> Login Page </h1>
+          {% load static %}
+          <img src="{% static 'login/movie-logo.png' %}" class="movie-logo">
+        </div>
+        <div class = "login-container">
+          <h1 class = "login-header"> Login </h1>
 
-        {% if template_data.error %}
-        <div> {{ template_data.error }} </div>
-        {% endif %}
+          {% if template_data.error %}
+          <div> {{ template_data.error }} </div>
+          {% endif %}
 
-        <form method="POST">
-          {% csrf_token %}
-          <div>
-            <p>
-              <input class="username-input" type="text" id="username" name="username" required autocomplete="username" class="form-control" placeholder = "Username">
-            </p>
-          </div>
+          <form method="POST">
+            {% csrf_token %}
+            <div>
+              <p>
+                <input class="username-input" type="text" id="username" name="username" required autocomplete="username" class="form-control" placeholder = "Username">
+              </p>
+            </div>
 
-            <p>
-              <input class="username-input" type="password" id="password" name="password" required autocomplete="current-password" class="form_control" placeholder = "Password">
-            </p>
+              <p>
+                <input class="username-input" type="password" id="password" name="password" required autocomplete="current-password" class="form_control" placeholder = "Password">
+              </p>
+
+              <div class = "forgot-password-container">
+                <a href="{% url 'accounts.password_reset' %}" class = "forgot-password">Forgot Password?</a>
+            </div>
 
             <div>
-              <a href="{% url 'accounts.password_reset' %}">Forgot Password?</a>
-          </div>
+              <button class = "login-button" type="submit">Login </button>
+            </div>
 
-          <div>
-            <button class = "login-button" type="submit">Login </button>
-          </div>
+            <div class = "signup-link-container">
+              <p class = "signup-link">
+                Don't have an account? <a href="{% url 'accounts.signup' %}" class = "link-css"> Sign Up</a>
+              </p>
+            </div>
+          </form>
 
-          <div>
-            <p class = "signup-link">
-              Don't have an account? <a href="{% url 'accounts.signup' %}"> Sign Up</a>
-            </p>
-          </div>
-        </form>
-
+        </div>
       </div>
+
     </body>
   </html>
