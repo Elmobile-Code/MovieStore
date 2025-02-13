@@ -31,7 +31,7 @@
 }
 
 .bg-dark {
-  background: linear-gradient(135deg, #2b3787, #142771);
+  background: #0f1043;
 }
 .ms-footer {
     background-color: #202020;
@@ -58,10 +58,6 @@
 .img-card-400 {
     width: auto;
     max-height: 400px;
-}
-
-.p-2 card align-items-center pt-4{
-    background-color: black;
 }
 
 footer {

@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block extra_stylesheets %}
   {% load static %}
-  <link href = "{% static 'moviePage/movie-page.css' %}">
 {% endblock %}
+  <link href = "{% static 'moviePage/movie-page.css' %}">
 
 {% block content %}
 
 <div class="p-3">
+    <img src="{% static 'moviePage/background.png' %}" class="bg-img">
     <div class="row mt-3">
-        <div class="col mx-auto mb-3">
-            <h2 class = "test"> List of Movies </h2>
-            <hr />
+        <div class="col mx-auto mb-3 ">
+            <h2 class = "text-white"> List of Movies </h2>
             <p class="card-text">
                 <form method="GET">
                     <div class="row">
@@ -30,7 +30,8 @@
     <div class="row">
         {% for movie in template_data.movies %}
         <div class="col-md-4 col-lg-3 mb-2">
-            <div class="p-2 card align-items-center pt-4">
+            <div class="p-2 card align-items-center pt-4 bg-primary bg-opacity-25 border-warning
+            border-1 border">
                 <img src="{{ movie.image_url }}" class="card-img-top rounded img-card-200"
                     style="height: 200px; width: auto"/>
                 <div class="card-body text-center">
