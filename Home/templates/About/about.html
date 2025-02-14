@@ -92,12 +92,12 @@
 
             <h4 class = "footer-section-title"> Quick Links </h4>
             <ul class = "link-container">
-              <li><a href = "#"> About </a></li>
-              <li><a href = "#"> Home </a></li>
-              <li><a href = "#"> Sign Up </a></li>
-              <li><a href = "#"> Login </a></li>
-              <li><a href = "#"> Movies </a></li>
-              <li><a href = "#"> Cart </a></li>
+              <li><a href = "{% url 'Home.about'%}"> About </a></li>
+              <li><a href = "{% url 'Home.home'%}"> Home </a></li>
+              <li><a href = "{% url 'accounts.signup'%}"> Sign Up </a></li>
+              <li><a href = "{% url 'accounts.login'%}"> Login </a></li>
+              <li><a href = "{% url 'movies.index'%}"> Movies </a></li>
+              <li><a href = "{% url 'movies.cart-detail'%}"> Cart </a></li>
             </ul>
 
             <h4 class = "footer-section-title">Contributors</h4>
