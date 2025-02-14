@@ -124,9 +124,7 @@ body {
   background-color: #050820;
   color: rgba(255, 255, 255, 0.7);
   font-family: "Inter", sans-serif;
-  width: 100vw;
   position: relative;
-  margin-left: calc(-50vw + 50%);
 }
 
 .footer-container a {

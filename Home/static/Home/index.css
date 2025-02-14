@@ -10,11 +10,11 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  padding: 40px;
 }
 
 main {
   flex: 1;
+  padding: 40px;
 }
 
 p {
@@ -160,9 +160,7 @@ button {
   background-color: #050820;
   color: rgba(255, 255, 255, 0.7);
   font-family: "Inter", sans-serif;
-  width: 100vw;
   position: relative;
-  margin-left: calc(-50vw + 50%);
 }
 
 .footer-container a {
