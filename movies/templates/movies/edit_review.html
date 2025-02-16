@@ -1,22 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ template_data.movie.name }}</title>
-</head>
-<body>
 
-    <!-- STYLING NEEDED -->
-    <h2>Edit Review</h2>
-    <hr/>
-    <form method="POST">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cart/edit_review.css' %}">
+  </head>
+
+
+  <body>
+    {% load static %}
+    <img src="{% static 'cart/background.png' %}" class="bg-img">
+
+    <div class = "header-container">
+      <h2 class = "header"> Edit Review </h2>
+    </div>
+
+    <div>
+      <label class = "text" for="comment"> Edit: </label>
+    </div>
+
+    <div>
+      <form method="POST">
         {% csrf_token %}
-        <p>
-            <label for="comment">Comment:</label>
-            <textarea name="comment" id="comment" required>{{ template_data.review.comment }}</textarea>
+        <p class = "container">
+          <textarea class = "text-box" name="comment" id="comment" required>{{ template_data.review.comment }}</textarea>
+          <button type="submit">Edit Review</button>
         </p>
+      </form>
+    </div>
 
-        <button type="submit">Edit Review</button>
-    </form>
-</body>
+    <div class = "space">
+
+    </div>
+
+    <footer class = "footer-container">
+      <div>
+        <div>
+          <div>
+            <div class = "footer-site-logo">
+              <a href = "#"> Movie Store </a>
+            </div>
+
+            <h4 class = "footer-section-title"> Quick Links </h4>
+            <ul class = "link-container">
+              <li><a href = "#"> About </a></li>
+              <li><a href = "#"> Home </a></li>
+              <li><a href = "#"> Sign Up </a></li>
+              <li><a href = "#"> Login </a></li>
+              <li><a href = "#"> Movies </a></li>
+              <li><a href = "#"> Cart </a></li>
+            </ul>
+
+            <h4 class = "footer-section-title">Contributors</h4>
+            <ul class = "link-container">
+              <li><a href = "#"> Koan </a></li>
+              <li><a href = "#"> Elvis </a></li>
+              <li><a href = "#"> Alina </a></li>
+              <li><a href = "#"> Steve </a></li>
+              <li><a href = "#" >Daksh </a></li>
+            </ul>
+
+            <div class = "copyright-text">
+              <p><small> &copy; Movie Store. All Rights Reserved. </small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

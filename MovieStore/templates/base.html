@@ -14,14 +14,13 @@ crossorigin="anonymous">
   {% endblock %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
-
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 </head>
 <body>
   {% load static %}
-  <img src="{% static 'css/home-background.png' %}" class="bg-img">
+  <img src="{% static 'css/background.png' %}" class="bg-img">
 <!-- Header -->
-<nav class="p-3 navbar navbar-dark bg-dark navbar-expand-lg">
+<nav class="p-3 navbar navbar-expand-lg">
     <div class="container">
 
     <button class="navbar-toggler" type="button"
@@ -34,6 +33,9 @@ crossorigin="anonymous">
     </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto navbar-ml">
+                <a class="nav-link" href="{% url 'Home.home' %}">
+                    Home
+                </a>
                 <a class="nav-link" href="{% url 'movies.index' %}">
                     Movies
                 </a>
@@ -51,53 +53,40 @@ crossorigin="anonymous">
     {% endblock content %}
   </div>
 <!-- Footer -->
-<section class="p-3 ms-footer d-none d-md-block">
-    <div class="container">
-        <div class="row mt-3 text-white">
-            <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4">
-                <b>MOVIES STORE</b>
-                <hr />
-                    <p>
-                    Welcome to Movies Store, your premier online
-                    destination for a cinematic adventure like no
-                    other! Dive into the world of movies from the
-                    comfort of your own home with our user-
-                    friendly and immersive online movie store.
-                    </p>
-            </div>
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                <b>LINKS</b>
-                <hr />
-                <p></p><a class="nav-link">
-                About
-                </a>
-            </div>
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                <b>CONTACT</b>
-                <hr />
-                <p><i class="fas fa-home me-2"></i>
-                150-2345 Tokyo-to, Japan
-                </p>
-                <p><i class="fas fa-envelope me-2"></i>
-                info@moviesstore.com
-                </p>
-                <p><i class="fas fa-phone me-2"></i>
-                +81 03-3333-3333
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<footer class="p-3 ms-footer-bottom bg-dark">
-    <div class="container d-flex justify-content-between">
-        <div class="me-5 text-white">
+<footer class = "footer-container">
+    <div>
+      <div>
+        <div>
+          <div class = "footer-site-logo">
+            <a href = "#"> Movie Store </a>
+          </div>
 
+          <h4 class = "footer-section-title"> Quick Links </h4>
+          <ul class = "link-container">
+              <li><a href = "{% url 'Home.about'%}"> About </a></li>
+              <li><a href = "{% url 'Home.home'%}"> Home </a></li>
+              <li><a href = "{% url 'accounts.signup'%}"> Sign Up </a></li>
+              <li><a href = "{% url 'accounts.login'%}"> Login </a></li>
+              <li><a href = "{% url 'movies.index'%}"> Movies </a></li>
+              <li><a href = "{% url 'movies.cart-detail'%}"> Cart </a></li>
+          </ul>
+
+          <h4 class = "footer-section-title">Contributors</h4>
+          <ul class = "link-container">
+            <li><a href = "#"> Koan </a></li>
+            <li><a href = "#"> Elvis </a></li>
+            <li><a href = "#"> Alina </a></li>
+            <li><a href = "#"> Steve </a></li>
+            <li><a href = "#" >Daksh </a></li>
+          </ul>
+
+          <div class = "copyright-text">
+            <p><small> &copy; Movie Store. All Rights Reserved. </small></p>
+          </div>
         </div>
-        <div class="text-white">
-        <span>© Copyright - 2024</span>
-        </div>
+      </div>
     </div>
-</footer>
+  </footer>
 <!-- Footer -->
   </body>
 </html>

@@ -9,72 +9,83 @@
   </head>
 
   <body>
-    <div class = "home-container">
-      {% load static %}
-      <img src="{% static 'Home/home-background.png' %}" class="bg-img">
+    <main>
+      <div class = "container-md">
+        {% load static %}
+        <img src="{% static 'Home/background.png' %}" class="bg-img">
 
-      <div class = "home-header">
+        <div class = "home-header">
+          <div>
+            <p class = "title">
+              Movie Store
+            </p>
+          </div>
+
+          <div>
+            {% if user.is_authenticated %}
+            <button class="btn-login" onclick="location.href='{% url 'accounts.logout' %}'">
+              Logout ({{ user.username }})
+            </button>
+            {% else %}
+            <button class="btn-login" onclick="location.href='{% url 'accounts.login' %}'">
+              Login
+            </button>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class = "message-container">
+          <p class = "welcome-message"> Welcome to Movie Store </p>
+          <p class = "sub-wel-msg"> Your Ticket to Unlimited Entertainment</p>
+          <p class = "sub-wel-msg"> The Best Movie Experience!</p>
+        </div>
+
+        <div class = "button-container">
+          <p class = "button-msg1"> Learn more about us! </p>
+          <button class = "use-button1" onclick="location.href='{% url 'Home.about' %}'"> About </button>
+          <button class = "use-button2" onclick="location.href='{% url 'movies.index' %}'"> Movies </button>
+          <p class = "button-msg2"> Start Searching! </p>
+        </div>
+
+      </div>
+
+      <div class = "space"> </div>
+    </main>
+
+    <footer class = "footer-container">
+      <div>
         <div>
-          <p class = "title">
-            Movie Store
-          </p>
-        </div>
+          <div>
+            <div class = "footer-site-logo">
+              <a href = "#"> Movie Store </a>
+            </div>
 
-        <div>
-          {% if user.is_authenticated %}
-          <button class="btn-login" onclick="location.href='{% url 'accounts.logout' %}'">
-            Logout ({{ user.username }})
-          </button>
-          {% else %}
-          <button class="btn-login" onclick="location.href='{% url 'accounts.login' %}'">
-            Login
-          </button>
-          {% endif %}
-        </div>
-      </div>
+            <h4 class = "footer-section-title"> Quick Links </h4>
+            <ul class = "link-container">
+              <li><a href = "{% url 'Home.about'%}"> About </a></li>
+              <li><a href = "{% url 'Home.home'%}"> Home </a></li>
+              <li><a href = "{% url 'accounts.signup'%}"> Sign Up </a></li>
+              <li><a href = "{% url 'accounts.login'%}"> Login </a></li>
+              <li><a href = "{% url 'movies.index'%}"> Movies </a></li>
+              <li><a href = "{% url 'movies.cart-detail'%}"> Cart </a></li>
+            </ul>
 
-      <div class = "message-container">
-        <p class = "welcome-message"> Welcome to Movie Store </p>
-        <p class = "sub-wel-msg"> Your Ticket to Unlimited Entertainment</p>
-        <p class = "sub-wel-msg"> The Best Movie Experience</p>
-      </div>
+            <h4 class = "footer-section-title">Contributors</h4>
+            <ul class = "link-container">
+              <li><a href = "#"> Koan </a></li>
+              <li><a href = "#"> Elvis </a></li>
+              <li><a href = "#"> Alina </a></li>
+              <li><a href = "#"> Steve </a></li>
+              <li><a href = "#" >Daksh </a></li>
+            </ul>
 
-      <div class = "button-container">
-        <p class = "button-msg1"> Learn more about us! </p>
-        <button class = "use-button1" onclick="location.href='{% url 'Home.about' %}'"> About </button>
-        <button class = "use-button2" onclick="location.href='{% url 'movies.index' %}'"> Movies </button>
-        <p class = "button-msg2"> Start Searching! </p>
-      </div>
-
-    </div>
-
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-left">
-          <h3>Movie Store</h3>
-          <p>© 2025 Movie Store. All rights reserved.</p>
-        </div>
-
-        <div class="footer-middle">
-          <h4>Quick Links</h4>
-          <ul>
-            <li> <a href="{% url 'Home.about' %}" class="use-button1"> About </a> </li>
-            <li> </li><a href="{% url 'movies.index' %}" class="use-button2"> Movies </a> </li>
-          </ul>
-        </div>
-
-        <div class="footer-right">
-          <h4>Contacts</h4>
-          <ul class="social-icons">
-            <li><a href="#" class="social-icon">Koan</a></li>
-            <li><a href="#" class="social-icon">Elvis</a></li>
-            <li><a href="#" class="social-icon">Alina</a></li>
-            <li><a href="#" class="social-icon">Steve</a></li>
-            <li><a href="#" class="social-icon">Daksh</a></li>
-          </ul>
+            <div class = "copyright-text">
+              <p><small> &copy; Movie Store. All Rights Reserved. </small></p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
-
   </body>
+
 </html>

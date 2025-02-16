@@ -134,8 +134,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = 'in-v3.mailjet.com'
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "973be0097cec82a8dac26f5d0c053ad7"
-EMAIL_HOST_PASSWORD = "2b0d813211841520172a90d8cb7767de"
+EMAIL_HOST_USER = "cs2340group3@gmail.com"
+EMAIL_HOST_PASSWORD = os.getenv("CS2340_Gmail_App_Password")

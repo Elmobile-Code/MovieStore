@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ template_data.title }}</title>
   {% load static %}
-  <link rel="stylesheet" href="{% static 'Home/about.css' %}">
+  <link rel="stylesheet" href="{% static 'Home/../../static/About/about.css' %}">
 </head>
 
 <body>
   {% load static %}
-  <img src="{% static 'Home/home-background.png' %}" class="bg-img">
+  <img src="{% static 'Home/background.png' %}" class="bg-img">
 
   <div class = "body-div">
 
@@ -51,7 +51,7 @@
 
         <div class="section">
           {% load static %}
-          <img class = "movie-logo" src="{% static 'Home/movie-logo.png' %}">
+          <img class = "movie-logo" src="{% static 'Home/../../static/About/movie-logo.png' %}">
         </div>
 
         <div class="section">
@@ -79,34 +79,45 @@
     </div>
     </div>
 
+  <div class = "space"></div>
 
-    <footer>
-      <div class="footer-container">
-        <div class="footer-left">
-          <h3>Movie Store</h3>
-          <p>© 2025 Movie Store. All rights reserved.</p>
-        </div>
+  <div>
+    <footer class = "footer-container">
+      <div>
+        <div>
+          <div>
+            <div class = "footer-site-logo">
+              <a href = "#"> Movie Store </a>
+            </div>
 
-        <div class="footer-middle">
-          <h4>Quick Links</h4>
-          <ul>
-            <li> <a href="{% url 'Home.about' %}" class="use-button1"> About </a> </li>
-            <li> </li><a href="{% url 'movies.index' %}" class="use-button2"> Movies </a> </li>
-          </ul>
-        </div>
+            <h4 class = "footer-section-title"> Quick Links </h4>
+            <ul class = "link-container">
+              <li><a href = "{% url 'Home.about'%}"> About </a></li>
+              <li><a href = "{% url 'Home.home'%}"> Home </a></li>
+              <li><a href = "{% url 'accounts.signup'%}"> Sign Up </a></li>
+              <li><a href = "{% url 'accounts.login'%}"> Login </a></li>
+              <li><a href = "{% url 'movies.index'%}"> Movies </a></li>
+              <li><a href = "{% url 'movies.cart-detail'%}"> Cart </a></li>
+            </ul>
 
-        <div class="footer-right">
-          <h4>Contacts</h4>
-          <ul class="social-icons">
-            <li><a href="#" class="social-icon">Koan</a></li>
-            <li><a href="#" class="social-icon">Elvis</a></li>
-            <li><a href="#" class="social-icon">Alina</a></li>
-            <li><a href="#" class="social-icon">Steve</a></li>
-            <li><a href="#" class="social-icon">Daksh</a></li>
-          </ul>
+            <h4 class = "footer-section-title">Contributors</h4>
+            <ul class = "link-container">
+              <li><a href = "#"> Koan </a></li>
+              <li><a href = "#"> Elvis </a></li>
+              <li><a href = "#"> Alina </a></li>
+              <li><a href = "#"> Steve </a></li>
+              <li><a href = "#" >Daksh </a></li>
+            </ul>
+
+            <div class = "copyright-text">
+              <p><small> &copy; Movie Store. All Rights Reserved. </small></p>
+            </div>
+          </div>
         </div>
-    </div>
-  </footer>
+      </div>
+    </footer>
+  </div>
+
 
 </body>
 

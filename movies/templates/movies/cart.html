@@ -1,42 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'cart/cart.css' %}">
-</head>
-<body>
-    <a class="nav-link" href="{% url 'movies.index' %}">Movies</a>
-  {% load static %}
-  <img src="{% static 'cart/home-background.png' %}" class="bg-img">
-    <header>
-        <h1>Cart</h1>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cart/cart.css' %}">
+  </head>
+
+  <body>
+    {% load static %}
+    <img src="{% static 'cart/background.png' %}" class="bg-img">
+
+    <div class = "main-flex">
+      <div class = "container">
+        <h1 class = "title"> Cart </h1>
         <ul>
-            {% for item in cart_items %}
-                <li>
-                    {{ item.movie.name }} - ${{ item.movie.price }} ({{ item.quantity }})
-                    <form action="{% url 'movies.remove-from-cart' cart_item_id=item.id %}" method="get">
-                        <button type="submit">Remove from cart</button>
-                    </form>
+          {% for item in cart_items %}
+            <li class = "cart-item">
+              {{ item.movie.name }} - ${{ item.movie.price }} ({{ item.quantity }})
+              <form action="{% url 'movies.remove-from-cart' cart_item_id=item.id %}" method="get">
+                <button type="submit" class = "cart-item-button">Remove from cart</button>
+              </form>
 
-                </li>
-            {% empty %}
-                <li>Your cart is empty.</li>
-            {% endfor %}
-        </ul>
+              </li>
+          {% empty %}
+            <li class = "empty">Your cart is empty.</li>
+          {% endfor %}
+          </ul>
 
-        {% if messages %}
+          {% if messages %}
             <ul class="messages">
-                {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
             </ul>
-        {% endif %}
+              {% endif %}
+      </div>
 
-    </header>
+      <div class = "back-button-div">
+        <a class = "nav-link" href="{% url 'movies.index' %}"> Movies </a>
+      </div>
+    </div>
+  <footer class = "footer-container">
+      <div>
+        <div>
+          <div>
+            <div class = "footer-site-logo">
+              <a href = "#"> Movie Store </a>
+            </div>
 
+            <h4 class = "footer-section-title"> Quick Links </h4>
+            <ul class = "link-container">
+              <li><a href = "#"> About </a></li>
+              <li><a href = "#"> Home </a></li>
+              <li><a href = "#"> Sign Up </a></li>
+              <li><a href = "#"> Login </a></li>
+              <li><a href = "#"> Movies </a></li>
+              <li><a href = "#"> Cart </a></li>
+            </ul>
 
-</body>
+            <h4 class = "footer-section-title">Contributors</h4>
+            <ul class = "link-container">
+              <li><a href = "#"> Koan </a></li>
+              <li><a href = "#"> Elvis </a></li>
+              <li><a href = "#"> Alina </a></li>
+              <li><a href = "#"> Steve </a></li>
+              <li><a href = "#" >Daksh </a></li>
+            </ul>
+
+            <div class = "copyright-text">
+              <p><small> &copy; Movie Store. All Rights Reserved. </small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
